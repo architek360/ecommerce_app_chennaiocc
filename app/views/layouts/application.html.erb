@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>EcommerceAppChennaiocc</title>
+  <title>Ecommerce App Chennai OCC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class="container">
+   <div class="row">
+    <div class="span9">
+    	<% if notice %>
+      <div class="alert alert-info"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+      <div class="alert alert-error"><%= alert %></div>
+      <% end %>
+      <%= yield %>
+    </div>
+    <div class="span3">
+      <h2>RoR at Chennai OCC</h2>
+      <p><strong>Presented by:</strong> <br />
+        <br />
+        @iMagesh <br />
+        @SpritleSoftware
+      </p>        
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
