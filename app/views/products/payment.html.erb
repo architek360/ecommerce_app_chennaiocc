@@ -2,7 +2,7 @@
 	Make payment
 </h2>
 
-<%= form_for(@selected_product, :url=> payment_receipt_path) do |f| %>
+<%= form_for(@selected_product, :url=> payment_receipt_path, :html => {:id=> "new_payment"}) do |f| %>
 
 <%= f.hidden_field :stripe_customer_token %>
 
