@@ -87,4 +87,8 @@ class ProductsController < ApplicationController
     @selected_product = Product.find(params[:id])
   end
 
+  def payment_receipt
+    puts params.inspect, "---------------"
+  end
+
 end
