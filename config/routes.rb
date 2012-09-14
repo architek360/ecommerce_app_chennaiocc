@@ -7,6 +7,8 @@ EcommerceAppChennaiocc::Application.routes.draw do
 
   get "products/payment/:id" => "products#payment"
 
+  match "payment_receipt" => "products#payment_receipt"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
