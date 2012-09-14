@@ -88,7 +88,14 @@ class ProductsController < ApplicationController
   end
 
   def payment_receipt
-    puts params.inspect, "---------------"
+
+    # if params[:product][:stripe_customer_token] != nil
+    #   customer =  Stripe::Charge.create(:amount => amount_in_cents, :currency => "usd", 
+    #     :description => "product name", :card => params[:product][:stripe_customer_token])
+      
+    #   @product.stripe_customer_token = customer.id
+    # end
+    
   end
 
 end
