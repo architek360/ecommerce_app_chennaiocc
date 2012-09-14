@@ -1,0 +1,31 @@
+<h1>
+	Make payment
+</h2>
+
+<%= form_for(@product, :html => {:class => "form-horizontal"}) do |f| %>
+
+<%= f.hidden_field :stripe_customer_token %>
+
+<p>
+	<b>Credit Card Number:</b>
+	<%= text_field_tag :card_number, nil, :name => nil %>
+</p>
+
+<p>
+	<b>Expiration:</b>
+	<%= select_month nil, {:add_month_numbers => true}, {:name => nil, :id => "card_month" } %>
+	<%= select_year nil, {:start_year => Date.today.year, :end_year => Date.today.year+5}, {:name => nil, :id => "card_year", :class => "year-input"} %>  
+</p>
+
+<p>
+	<b>Security Code:</b>
+	<%= text_field_tag :card_code, nil, :name => nil %>
+</p>
+
+<p>
+	<%= f.submit "Purchase", :disable_with => "Please wait...", :class => "btn btn-small btn-primary" ,:id=>"purchase_id", 
+	:style => "float: left; margin-right: 1%;" %>
+	<span class="alert alert-error" id="stripe_error" style="float: left; display:none;">Processing!</span>            
+</p>       
+
+<% end %>
