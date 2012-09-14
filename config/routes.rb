@@ -5,6 +5,8 @@ EcommerceAppChennaiocc::Application.routes.draw do
 
   resources :products
 
+  get "products/payment/:id" => "products#payment"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

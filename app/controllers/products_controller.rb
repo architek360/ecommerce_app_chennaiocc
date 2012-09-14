@@ -82,4 +82,9 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def payment
+    @selected_product = Product.find(params[:id])
+  end
+
 end
